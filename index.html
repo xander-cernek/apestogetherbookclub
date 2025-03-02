@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApesTogether Book Club | Primates who Read</title>
+    <style>
+        :root {
+            --primary: #36453B;
+            --secondary: #F5F1E3;
+            --accent: #C2A878;
+            --text: #2D2A24;
+            --light-accent: #E8E4D9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100'%3E%3Cpath d='M50,20 C60,20 70,30 65,40 C75,35 85,45 80,55 C90,50 95,65 85,75 C95,85 80,95 70,90 C75,100 55,100 50,90 C45,100 25,100 30,90 C20,95 5,85 15,75 C5,65 10,50 20,55 C15,45 25,35 35,40 C30,30 40,20 50,20 Z' fill='%23C2A878' fill-opacity='0.15'/%3E%3C/svg%3E");
+            background-repeat: repeat-y;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            margin-right: 15px;
+            font-size: 28px;
+        }
+
+        .title h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .title h2 {
+            font-size: 1.1rem;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background-color: var(--light-accent);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-right: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .current-book {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            gap: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .current-book::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100'%3E%3Cpath d='M30,30 C40,20 60,20 70,30 C80,40 80,60 70,70 C60,80 40,80 30,70 C20,60 20,40 30,30 Z' fill='%23C2A878' fill-opacity='0.1'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .book-cover {
+            flex: 0 0 200px;
+            background-color: var(--light-accent);
+            border-radius: 4px;
+            height: 300px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--accent);
+        }
+
+        .book-info {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .book-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .book-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .meeting-details {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-accent);
+        }
+
+        .meeting-details p {
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h3 {
+            font-size: 1.8rem;
+            display: inline-block;
+            padding: 0 20px;
+            background-color: var(--secondary);
+            position: relative;
+            z-index: 1;
+            font-weight: 400;
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--accent);
+            z-index: 0;
+        }
+
+        .reading-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .book-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-cover {
+            height: 250px;
+            background-color: var(--light-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .card-info p {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .members {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .member-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .member-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--light-accent);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--accent);
+        }
+
+        .member-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .member-info p {
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        .join-us {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-us::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100'%3E%3Cpath d='M50,20 C60,20 70,30 65,40 C75,35 85,45 80,55 C90,50 95,65 85,75 C95,85 80,95 70,90 C75,100 55,100 50,90 C45,100 25,100 30,90 C20,95 5,85 15,75 C5,65 10,50 20,55 C15,45 25,35 35,40 C30,30 40,20 50,20 Z' fill='%23C2A878' fill-opacity='0.15'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .join-us h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .join-us p {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            list-style: none;
+        }
+
+        .social-links li {
+            margin: 0 10px;
+        }
+
+        .social-links a {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .current-book {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .nav-links li {
+                margin: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-title">
+                <div class="logo">🦍</div>
+                <div class="title">
+                    <h1>ApesTogether Book Club</h1>
+                    <h2>Primates who Read</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#current">Current Book</a></li>
+                <li><a href="#upcoming">Reading List</a></li>
+                <li><a href="#members">Members</a></li>
+                <li><a href="#join">Join Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="current">
+        <div class="container">
+            <div class="section-title">
+                <h3>Our Current Book</h3>
+            </div>
+
+            <div class="current-book">
+                <div class="book-cover">Book Cover</div>
+                <div class="book-info">
+                    <h3>The Overstory</h3>
+                    <h4>by Richard Powers</h4>
+
+                    <p>The Overstory is a sweeping, impassioned work of activism and resistance that is also a stunning evocation of the natural world. It tells the story of a handful of people who learn how to see that world and who are drawn up into its unfolding catastrophe.</p>
+
+                    <div class="meeting-details">
+                        <p><strong>Next Meeting:</strong> March 15, 2025, 7:00 PM</p>
+                        <p><strong>Location:</strong> Miko's Tea House, 123 Bamboo Lane</p>
+                        <p><strong>Discussion Leader:</strong> Emma</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="upcoming">
+        <div class="container">
+            <div class="section-title">
+                <h3>Upcoming Reading List</h3>
+            </div>
+
+            <div class="reading-list">
+                <div class="book-card">
+                    <div class="card-cover">Book Cover</div>
+                    <div class="card-info">
+                        <h4>Klara and the Sun</h4>
+                        <p>Kazuo Ishiguro</p>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="card-cover">Book Cover</div>
+                    <div class="card-info">
+                        <h4>The Ministry for the Future</h4>
+                        <p>Kim Stanley Robinson</p>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="card-cover">Book Cover</div>
+                    <div class="card-info">
+                        <h4>Braiding Sweetgrass</h4>
+                        <p>Robin Wall Kimmerer</p>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="card-cover">Book Cover</div>
+                    <div class="card-info">
+                        <h4>Cloud Cuckoo Land</h4>
+                        <p>Anthony Doerr</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="members">
+        <div class="container">
+            <div class="section-title">
+                <h3>Our Members</h3>
+            </div>
+
+            <div class="members">
+                <div class="member-card">
+                    <div class="member-avatar">🦧</div>
+                    <div class="member-info">
+                        <h4>Emma</h4>
+                        <p>Founder, Sci-Fi enthusiast</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">🦍</div>
+                    <div class="member-info">
+                        <h4>Marcus</h4>
+                        <p>Literature professor</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">🐒</div>
+                    <div class="member-info">
+                        <h4>Sophie</h4>
+                        <p>Mystery lover</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">🦧</div>
+                    <div class="member-info">
+                        <h4>David</h4>
+                        <p>Aspiring writer</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">🐒</div>
+                    <div class="member-info">
+                        <h4>Priya</h4>
+                        <p>Historical fiction fan</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">🦍</div>
+                    <div class="member-info">
+                        <h4>James</h4>
+                        <p>Cookbook collector</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="join">
+        <div class="container">
+            <div class="join-us">
+                <h3>Join Our Troop!</h3>
+                <p>We're always looking for new primates who love to read! We meet on the third Saturday of every month to discuss our current book. Bring your insights, questions, and an appetite for bananas.</p>
+                <a href="#" class="btn">Contact Us to Join</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <ul class="social-links">
+                <li><a href="#">📚</a></li>
+                <li><a href="#">📱</a></li>
+                <li><a href="#">📧</a></li>
+            </ul>
+
+            <p class="footer-text">© 2025 ApesTogether Book Club. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
