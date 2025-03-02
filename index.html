@@ -6,11 +6,13 @@
     <title>ApesTogether Book Club | Primates who Read</title>
     <style>
         :root {
-            --primary: #36453B;
-            --secondary: #F5F1E3;
-            --accent: #C2A878;
-            --text: #2D2A24;
-            --light-accent: #E8E4D9;
+            --primary: #2A4C3A;           /* Darker jungle green */
+            --secondary: #F5F9E9;         /* Light leaf color */
+            --accent: #8B6F47;            /* Brown bark color */
+            --text: #2D2A24;              /* Dark text */
+            --light-accent: #C5D1A2;      /* Light moss green */
+            --highlight: #5E8C61;         /* Medium jungle green */
+            --canopy: #1A332C;            /* Deep canopy green */
         }
 
         * {
@@ -24,6 +26,7 @@
             background-color: var(--secondary);
             color: var(--text);
             line-height: 1.6;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%235E8C61' fill-opacity='0.05' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'%3E%3C/path%3E%3C/svg%3E");
         }
 
         .container {
@@ -38,19 +41,32 @@
             padding: 40px 0;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%238B6F47' fill-opacity='0.07'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.1;
         }
 
         header::after {
             content: "";
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100'%3E%3Cpath d='M50,20 C60,20 70,30 65,40 C75,35 85,45 80,55 C90,50 95,65 85,75 C95,85 80,95 70,90 C75,100 55,100 50,90 C45,100 25,100 30,90 C20,95 5,85 15,75 C5,65 10,50 20,55 C15,45 25,35 35,40 C30,30 40,20 50,20 Z' fill='%23C2A878' fill-opacity='0.15'/%3E%3C/svg%3E");
-            background-repeat: repeat-y;
-            opacity: 0.3;
+            bottom: -10px;
+            right: -10px;
+            width: 120px;
+            height: 120px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100'%3E%3Cpath d='M30,30 C40,20 60,20 70,30 C80,40 80,60 70,70 C60,80 40,80 30,70 C20,60 20,40 30,30 Z' fill='%238B6F47' fill-opacity='0.15'/%3E%3C/svg%3E");
+            opacity: 0.5;
             z-index: 1;
+            transform: rotate(15deg);
         }
 
         .logo-title {
@@ -62,48 +78,104 @@
 
         .logo {
             margin-right: 15px;
-            font-size: 28px;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(139, 111, 71, 0.2);
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px rgba(139, 111, 71, 0.1);
+            position: relative;
+        }
+
+        .logo::before {
+            content: "🌿";
+            position: absolute;
+            font-size: 20px;
+            top: -5px;
+            right: -5px;
+            transform: rotate(30deg);
+        }
+
+        .logo::after {
+            content: "🌴";
+            position: absolute;
+            font-size: 20px;
+            bottom: -5px;
+            left: -5px;
+            transform: rotate(-15deg);
         }
 
         .title h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
+            font-size: 2.8rem;
+            font-weight: 600;
             letter-spacing: 1px;
             margin-bottom: 5px;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+            font-family: 'Georgia', serif;
         }
 
         .title h2 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 300;
             font-style: italic;
             letter-spacing: 1px;
+            color: var(--light-accent);
         }
 
         nav {
-            background-color: var(--light-accent);
-            padding: 15px 0;
-            border-bottom: 1px solid var(--accent);
+            background-color: var(--canopy);
+            padding: 18px 0;
+            border-bottom: 2px solid var(--accent);
+            position: relative;
+        }
+
+        nav::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--highlight), var(--accent));
+            opacity: 0.7;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
+            margin-left: 20px;
         }
 
         .nav-links li {
-            margin-right: 30px;
+            margin-right: 35px;
+            position: relative;
+        }
+
+        .nav-links li::before {
+            content: "🍃";
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            opacity: 0.6;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--primary);
+            color: var(--secondary);
             font-weight: 500;
             position: relative;
             transition: color 0.3s;
+            font-size: 1.1rem;
+            padding: 5px 0;
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--light-accent);
         }
 
         .nav-links a::after {
@@ -113,7 +185,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: var(--accent);
+            background-color: var(--light-accent);
             transition: width 0.3s;
         }
 
@@ -428,7 +500,6 @@
                 <li><a href="#current">Current Book</a></li>
                 <li><a href="#upcoming">Reading List</a></li>
                 <li><a href="#members">Members</a></li>
-                <li><a href="#join">Join Us</a></li>
             </ul>
         </div>
     </nav>
@@ -450,7 +521,7 @@
                     <p>From the #1 New York Times bestselling author of Killers of the Flower Moon, a page-turning story of shipwreck, survival, and savagery, culminating in a court martial that reveals a shocking truth.</p>
 
                     <div class="meeting-details">
-                        <p><strong>Next Meeting:</strong> Time TBD</p>
+                        <p><strong>Next Meeting:</strong> Saturday, March 8</p>
                         <p><strong>Location:</strong> Discord</p>
                         <p><strong>Discussion Leader:</strong> Xander</p>
                     </div>
