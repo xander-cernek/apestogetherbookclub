@@ -376,6 +376,49 @@
             color: var(--accent);
         }
 
+        /* New badge styles */
+        .badge {
+            display: inline-block;
+            margin-left: 8px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .badge-tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: var(--primary);
+            color: var(--secondary);
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.8rem;
+            font-weight: normal;
+        }
+
+        .badge-tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: var(--primary) transparent transparent transparent;
+        }
+
+        .badge:hover .badge-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
         .join-us {
             background-color: white;
             border-radius: 8px;
@@ -499,6 +542,7 @@
             <ul class="nav-links">
                 <li><a href="#current">Current Book</a></li>
                 <li><a href="#upcoming">Reading List</a></li>
+                <li><a href="#past">Past Books</a></li>
                 <li><a href="#members">Members</a></li>
             </ul>
         </div>
@@ -512,18 +556,18 @@
 
             <div class="current-book">
                 <div class="book-cover">
-                  <img src="https://covers.openlibrary.org/b/isbn/9780385534260-L.jpg" alt="The Wager by David Grann" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
+                  <img src="https://covers.openlibrary.org/b/isbn/1613743416-L.jpg" alt="Roadside Picnic by Arkady and Boris Strugatsky" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div class="book-info">
-                    <h3>The Wager</h3>
-                    <h4>by David Grann</h4>
+                    <h3>Roadside Picnic</h3>
+                    <h4>by Arkady and Boris Strugatsky</h4>
 
-                    <p>From the #1 New York Times bestselling author of Killers of the Flower Moon, a page-turning story of shipwreck, survival, and savagery, culminating in a court martial that reveals a shocking truth.</p>
+                    <p>Red Schuhart is a stalker, one of those young rebels who are compelled, in spite of extreme danger, to venture illegally into the Zone to collect the mysterious artifacts that the alien visitors left scattered around. His life is dominated by the place and the thriving black market in the alien products. But when he and his friend Kirill go into the Zone together to pick up a "full empty," something goes wrong...</p>
 
                     <div class="meeting-details">
-                        <p><strong>Next Meeting:</strong> Saturday, March 8</p>
+                        <p><strong>Next Meeting:</strong> Saturday, April 12</p>
                         <p><strong>Location:</strong> Discord</p>
-                        <p><strong>Discussion Leader:</strong> Xander</p>
+                        <p><strong>Discussion Leader:</strong> Cooper</p>
                     </div>
                 </div>
             </div>
@@ -572,6 +616,27 @@
         </div>
     </section>
 
+    <section id="past">
+        <div class="container">
+            <div class="section-title">
+                <h3>Past Books</h3>
+            </div>
+
+            <div class="reading-list">
+                <div class="book-card">
+                    <div class="card-cover">
+                      <img src="https://covers.openlibrary.org/b/isbn/9780385534260-L.jpg" alt="The Wager by David Grann" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-info">
+                        <h4>The Wager</h4>
+                        <p>by David Grann</p>
+                        <p>March 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="members">
         <div class="container">
             <div class="section-title">
@@ -582,7 +647,7 @@
                 <div class="member-card">
                     <div class="member-avatar">🦍</div>
                     <div class="member-info">
-                        <h4>Xander</h4>
+                        <h4>Xander <span class="badge">🏴‍☠️<span class="badge-tooltip">The Wager - March 2025</span></span></h4>
                         <p>Book club member</p>
                     </div>
                 </div>
@@ -590,7 +655,7 @@
                 <div class="member-card">
                     <div class="member-avatar">🦧</div>
                     <div class="member-info">
-                        <h4>Sam</h4>
+                        <h4>Sam <span class="badge">🏴‍☠️<span class="badge-tooltip">The Wager - March 2025</span></span></h4>
                         <p>Book club member</p>
                     </div>
                 </div>
@@ -598,7 +663,7 @@
                 <div class="member-card">
                     <div class="member-avatar">🐒</div>
                     <div class="member-info">
-                        <h4>Danny</h4>
+                        <h4>Danny <span class="badge">🏴‍☠️<span class="badge-tooltip">The Wager - March 2025</span></span></h4>
                         <p>Book club member</p>
                     </div>
                 </div>
@@ -606,7 +671,7 @@
                 <div class="member-card">
                     <div class="member-avatar">🦧</div>
                     <div class="member-info">
-                        <h4>Asher</h4>
+                        <h4>Asher <span class="badge">🏴‍☠️<span class="badge-tooltip">The Wager - March 2025</span></span></h4>
                         <p>Book club member</p>
                     </div>
                 </div>
@@ -614,7 +679,7 @@
                 <div class="member-card">
                     <div class="member-avatar">🦍</div>
                     <div class="member-info">
-                        <h4>Cooper</h4>
+                        <h4>Cooper <span class="badge">🏴‍☠️<span class="badge-tooltip">The Wager - March 2025</span></span></h4>
                         <p>Book club member</p>
                     </div>
                 </div>
@@ -622,7 +687,7 @@
                 <div class="member-card">
                     <div class="member-avatar">🐒</div>
                     <div class="member-info">
-                        <h4>Alex</h4>
+                        <h4>Alex <span class="badge">🏴‍☠️<span class="badge-tooltip">The Wager - March 2025</span></span></h4>
                         <p>Book club member</p>
                     </div>
                 </div>
@@ -630,7 +695,7 @@
                 <div class="member-card">
                     <div class="member-avatar">🦧</div>
                     <div class="member-info">
-                        <h4>Ben</h4>
+                        <h4>Ben <span class="badge">🏴‍☠️<span class="badge-tooltip">The Wager - March 2025</span></span></h4>
                         <p>Book club member</p>
                     </div>
                 </div>
@@ -638,7 +703,7 @@
                 <div class="member-card">
                     <div class="member-avatar">🦍</div>
                     <div class="member-info">
-                        <h4>Louis</h4>
+                        <h4>Louis <span class="badge">🏴‍☠️<span class="badge-tooltip">The Wager - March 2025</span></span></h4>
                         <p>Book club member</p>
                     </div>
                 </div>
