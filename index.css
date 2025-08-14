@@ -410,7 +410,6 @@ section {
     left: 50%;
     margin-left: -60px;
     opacity: 0;
-    transition: opacity 0.3s;
     font-size: 0.8rem;
     font-weight: normal;
 }
@@ -725,4 +724,24 @@ footer {
 
 .scroll-to-top.bounce {
   animation: bounce 0.6s;
+}
+
+.badge-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: gold; /* gold fill */
+  color: black; /* better contrast on gold */
+  border-radius: 50%;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* drop shadow */
+  font-weight: bold;
+}
+
+.badges-container {
+  margin-top: 0.25rem;
 }
