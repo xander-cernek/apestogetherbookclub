@@ -4,14 +4,14 @@
 
 Current Members:
 
-Xander
-Sam
-Alex K.
-Ben
-Cooper
-Jose
-Louis
+- Xander
+- Sam
+- Alex K.
+- Ben
+- Cooper
+- Jose
+- Louis
 
 Past Members:
-Asher
-Danny
+- Asher
+- Danny
