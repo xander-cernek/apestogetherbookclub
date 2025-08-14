@@ -1,0 +1,166 @@
+{
+  "books": {
+    "the_haunting_of_hill_house": {
+      "title": "The Haungting of Hill House",
+      "author": "Shirley Jackson",
+      "dateRead": "August 2025",
+      "emoji": "🏚️"
+    },
+    "wager": {
+      "title": "The Wager",
+      "author": "David Grann",
+      "dateRead": "March 2025",
+      "emoji": "🏴‍☠️"
+    },
+    "roadside_picnic": {
+      "title": "Roadside Picnic",
+      "author": "Arkady and Boris Strugatsky",
+      "dateRead": "April 2025",
+      "emoji": "🧺"
+    },
+    "vanishing_world": {
+      "title": "Vanishing World",
+      "author": "Christine de Pizan",
+      "dateRead": "April 2025",
+      "emoji": "👶🏻"
+    },
+    "parable_of_the_sower": {
+      "title": "Parable of the Sower",
+      "author": "Octavia E. Butler",
+      "dateRead": "May 2025",
+      "emoji": "🌱"
+    },
+    "fear_and_loathing_in_las_vegas": {
+      "title": "Fear and Loathing in Las Vegas",
+      "author": "Hunter S. Thompson",
+      "dateRead": "June 2025",
+      "emoji": "🍻"
+    },
+    "babel": {
+      "title": "Babel",
+      "author": "R.F. Kuang",
+      "dateRead": "July 2025",
+      "emoji": "🎓"
+    }
+  },
+  "members": {
+    "Xander": {
+      "avatar": "🦍",
+      "role": "Book club member",
+      "active": true,
+      "booksRead": [
+        "babel",
+        "fear_and_loathing_in_las_vegas",
+        "parable_of_the_sower",
+        "vanishing_world",
+        "roadside_picnic",
+        "wager",
+        "the_haunting_of_hill_house"
+      ]
+    },
+    "Sam": {
+      "avatar": "🦧",
+      "role": "Book club member",
+      "active": true,
+      "booksRead": [
+        "babel",
+        "fear_and_loathing_in_las_vegas",
+        "parable_of_the_sower",
+        "vanishing_world",
+        "roadside_picnic",
+        "wager",
+        "the_haunting_of_hill_house"
+      ]
+    },
+    "Danny": {
+      "avatar": "🐒",
+      "role": "Book club member",
+      "active": false,
+      "booksRead": [
+        "vanishing_world",
+        "wager"
+      ]
+    },
+    "Jose": {
+      "avatar": "🐒",
+      "role": "Book club member",
+      "active": true,
+      "booksRead": [
+        "babel",
+        "fear_and_loathing_in_las_vegas",
+        "the_haunting_of_hill_house"
+      ]
+    },
+    "Asher": {
+      "avatar": "🦧",
+      "role": "Book club member",
+      "active": false,
+      "booksRead": [
+        "vanishing_world",
+        "roadside_picnic",
+        "wager"
+      ]
+    },
+    "Cooper": {
+      "avatar": "🦍",
+      "role": "Book club member",
+      "active": true,
+      "booksRead": [
+        "babel",
+        "fear_and_loathing_in_las_vegas",
+        "parable_of_the_sower",
+        "vanishing_world",
+        "roadside_picnic",
+        "wager",
+        "the_haunting_of_hill_house"
+      ]
+    },
+    "Alex": {
+      "avatar": "🐒",
+      "role": "Book club member",
+      "active": true,
+      "booksRead": [
+        "babel",
+        "fear_and_loathing_in_las_vegas",
+        "parable_of_the_sower",
+        "vanishing_world",
+        "roadside_picnic",
+        "wager"
+      ]
+    },
+    "Ben": {
+      "avatar": "🦧",
+      "role": "Book club member",
+      "active": true,
+      "booksRead": [
+        "babel",
+        "fear_and_loathing_in_las_vegas",
+        "parable_of_the_sower",
+        "vanishing_world",
+        "roadside_picnic",
+        "wager",
+        "the_haunting_of_hill_house"
+      ]
+    },
+    "Louis": {
+      "avatar": "🦍",
+      "role": "Book club member",
+      "active": true,
+      "booksRead": [
+        "fear_and_loathing_in_las_vegas",
+        "parable_of_the_sower",
+        "vanishing_world",
+        "roadside_picnic",
+        "wager"
+      ]
+    },
+    "Quinn": {
+        "avatar": "🙉",
+        "role": "Book club member",
+        "active": true,
+        "booksRead": [
+          "the_haunting_of_hill_house"
+        ]
+      }
+  }
+}
