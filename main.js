@@ -41,36 +41,47 @@ function createMemberCards() {
         const nameHeading = document.createElement('h4');
         nameHeading.textContent = memberName + ' ';
 
+        // Badge count button
+        const badgeCount = document.createElement('span');
+        badgeCount.className = 'badge-count';
+        badgeCount.textContent = member.booksRead.length;
+        nameHeading.appendChild(badgeCount);
+
+        // Badge container (hidden by default)
+        const badgesContainer = document.createElement('div');
+        badgesContainer.className = 'badges-container';
+        badgesContainer.style.display = 'none';
+
         member.booksRead.forEach(bookKey => {
             const book = bookClubData.books[bookKey];
 
-            // Badge container
             const badgeSpan = document.createElement('span');
             badgeSpan.className = 'badge';
             badgeSpan.textContent = book.emoji;
 
-            // Tooltip
             const tooltipSpan = document.createElement('span');
             tooltipSpan.className = 'badge-tooltip';
             tooltipSpan.textContent = `${book.title} - ${book.dateRead}`;
-
-            // Nest tooltip inside badge
             badgeSpan.appendChild(tooltipSpan);
 
-            // Append badge to heading
-            nameHeading.appendChild(badgeSpan);
+            badgesContainer.appendChild(badgeSpan);
+        });
+
+        // Toggle badges on click
+        memberCard.addEventListener('click', () => {
+            badgesContainer.style.display =
+                badgesContainer.style.display === 'none' ? 'block' : 'none';
         });
 
         // Role/description
         const rolePara = document.createElement('p');
         rolePara.textContent = member.role;
 
-        // Put together info block
+        // Assemble
         infoDiv.appendChild(nameHeading);
+        infoDiv.appendChild(badgesContainer);
         infoDiv.appendChild(rolePara);
         memberCard.appendChild(infoDiv);
-
-        // Append to the page (assuming you have a section called memberCardSection)
         memberCardSection.appendChild(memberCard);
     }
 
