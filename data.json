@@ -1,5 +1,11 @@
 {
   "books": {
+    "guards_guards": {
+      "title": "Guards! Guards!",
+      "author": "Terry Pratchett",
+      "dateRead": "August 2025",
+      "emoji": "⚔️"
+    },
     "the_haunting_of_hill_house": {
       "title": "The Haunting of Hill House",
       "author": "Shirley Jackson",
