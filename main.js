@@ -165,3 +165,29 @@ document.addEventListener('DOMContentLoaded', loadBookClubData);
     });
 })();
 
+let lastScrollTop = window.scrollY;
+let lastTime = Date.now();
+const btn = document.querySelector('.scroll-to-top');
+
+window.addEventListener('scroll', () => {
+  const now = Date.now();
+  const scrollDiff = Math.abs(window.scrollY - lastScrollTop);
+  const timeDiff = now - lastTime;
+  const speed = scrollDiff / timeDiff; // px per ms
+
+  // Fade in/out based on position
+  if (window.scrollY > 200) {
+    btn.classList.add('visible');
+  } else {
+    btn.classList.remove('visible');
+  }
+
+  // Bounce if fast scroll
+  if (speed > 0.5) { // adjust threshold
+    btn.classList.add('bounce');
+    setTimeout(() => btn.classList.remove('bounce'), 600);
+  }
+
+  lastScrollTop = window.scrollY;
+  lastTime = now;
+});

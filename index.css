@@ -654,3 +654,75 @@ footer {
     opacity: 0;
   }
 }
+
+.scroll-to-top {
+  position: fixed;
+  top:50%;
+  transform: translateY(-50%);
+  right: 2rem;
+  padding: 0.75rem 1.25rem;
+  color: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+  font-weight: bold;
+  font-size: 1rem;
+  transition:
+    transform 0.2s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  background:
+    /* left side: green dots on yellow base */
+    radial-gradient(circle at 0% 50%, yellow 0%, yellow 100%),
+    repeating-radial-gradient(
+      circle at 0% 50%,
+      green 0px,
+      green 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    /* right side: yellow dots on green base */
+    radial-gradient(circle at 100% 50%, green 0%, green 100%),
+    repeating-radial-gradient(
+      circle at 100% 50%,
+      yellow 0px,
+      yellow 2px,
+      transparent 2px,
+      transparent 4px
+    );
+  background-size: 50% 100%, 50% 100%, 50% 100%, 50% 100%;
+  background-position: left center, left center, right center, right center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+/* Hover effect */
+.scroll-to-top:hover {
+  transform: scale(1.05);
+}
+
+/* Show button */
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.scroll-to-top.bounce {
+  animation: bounce 0.6s;
+}
