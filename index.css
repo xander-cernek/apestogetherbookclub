@@ -534,3 +534,101 @@ footer {
         margin: 0 15px;
     }
 }
+
+/* Leaderboard Section */
+#leaderboard {
+    margin: 40px 0;
+}
+
+#leaderboard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaderboard-entry.card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto 20px auto;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.leaderboard-left-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rank {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.avatar {
+    font-size: 2rem;
+}
+
+.leaderboard-right-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.name {
+    font-size: 2.0rem;
+    font-weight: bold;
+}
+
+.count {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* 🎉 First place pulsing highlight */
+.first-place {
+    position: relative;
+    overflow: hidden;
+    background-color: #f9f9f9; /* fallback base color */
+    color: #000;
+}
+
+.first-place::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #f8ff00, #3ad59f, #f8ff00);
+    background-size: 300% 300%;
+    animation: gradientShift 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* Ensures text stays above the fill layer */
+.first-place .leaderboard-card {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+

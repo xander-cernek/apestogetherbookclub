@@ -25,6 +25,7 @@
             <li><a href="#current">Current Book</a></li>
             <li><a href="#past">Past Books</a></li>
             <li><a href="#members">Members</a></li>
+            <li><a href="#leaderboard">Leaderboard</a></li>
         </ul>
     </div>
 </nav>
@@ -146,6 +147,14 @@
     </div>
 </section>
 
+<section id="leaderboard">
+    <div class="container">
+        <div class="section-title"><h3>Leaderboard</h3></div>
+        <ol id="leaderboard-list" class="leaderboard"></ol>
+    </div>
+</section>
+
+
 <footer>
     <p class="footer-text">© 2025 ApesTogether Book Club. All rights reserved.</p>
 </footer>
@@ -159,6 +168,7 @@
             const response = await fetch('data.json');
             bookClubData = await response.json();
             createMemberCards();
+            createLeaderboard();
         } catch (error) {
             console.error('Error loading book club data:', error);
         }
@@ -227,6 +237,45 @@
         }
 
     }
+
+    function createLeaderboard() {
+        if (!bookClubData) return;
+
+        const leaderboardList = document.getElementById('leaderboard-list');
+        leaderboardList.innerHTML = '';
+
+        const memberEntries = Object.entries(bookClubData.members);
+
+        // Sort by books read, descending
+        memberEntries.sort((a, b) => b[1].booksRead.length - a[1].booksRead.length);
+
+        // Take only the top 3
+        const topThree = memberEntries.slice(0, 3);
+
+        topThree.forEach(([name, data], index) => {
+            const listItem = document.createElement('li');
+            listItem.className = 'leaderboard-entry card';
+
+            if (index === 0) {
+                listItem.classList.add('first-place');
+            }
+
+            listItem.innerHTML = `
+            <div class="leaderboard-card">
+                <div class="leaderboard-left-info">
+                    <span class="name">${name}</span>
+                </div>
+                <div class="leaderboard-right-info">
+                    <span class="avatar">${data.avatar}</span>
+                    <span class="count">${data.booksRead.length} books</span>
+                </div>
+            </div>
+        `;
+
+            leaderboardList.appendChild(listItem);
+        });
+    }
+
 
     // Load data when page loads
     document.addEventListener('DOMContentLoaded', loadBookClubData);
