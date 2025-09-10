@@ -61,7 +61,8 @@
         "vanishing_world",
         "roadside_picnic",
         "wager",
-        "the_haunting_of_hill_house"
+        "the_haunting_of_hill_house",
+        "guards_guards"
       ]
     },
     "Sam": {
@@ -75,7 +76,8 @@
         "vanishing_world",
         "roadside_picnic",
         "wager",
-        "the_haunting_of_hill_house"
+        "the_haunting_of_hill_house",
+        "guards_guards"
       ]
     },
     "Danny": {
@@ -94,7 +96,8 @@
       "booksRead": [
         "babel",
         "fear_and_loathing_in_las_vegas",
-        "the_haunting_of_hill_house"
+        "the_haunting_of_hill_house",
+        "guards_guards"
       ]
     },
     "Asher": {
@@ -118,7 +121,8 @@
         "vanishing_world",
         "roadside_picnic",
         "wager",
-        "the_haunting_of_hill_house"
+        "the_haunting_of_hill_house",
+        "guards_guards"
       ]
     },
     "Alex": {
@@ -165,7 +169,8 @@
         "role": "Book club member",
         "active": true,
         "booksRead": [
-          "the_haunting_of_hill_house"
+          "the_haunting_of_hill_house",
+          "guards_guards"
         ]
       }
   }
