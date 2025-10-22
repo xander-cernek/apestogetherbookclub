@@ -1,5 +1,17 @@
 {
   "books": {
+    "scanner_darkly": {
+      "title": "A Scanner Darkly"
+      "author": "Philip K. Dick"
+      "dateRead": "October 2025"
+      "emoji": "💉"
+    },
+    "master_of_go": {
+      "title": "The Master of Go"
+      "author": "Yasunari Kawabata"
+      "dateRead": "September 2025"
+      "emoji": "⚪"
+    },
     "guards_guards": {
       "title": "Guards! Guards!",
       "author": "Terry Pratchett",
@@ -61,7 +73,8 @@
         "vanishing_world",
         "roadside_picnic",
         "wager",
-        "the_haunting_of_hill_house"
+        "the_haunting_of_hill_house",
+        "master_of_go",
       ]
     },
     "Sam": {
@@ -75,7 +88,9 @@
         "vanishing_world",
         "roadside_picnic",
         "wager",
-        "the_haunting_of_hill_house"
+        "the_haunting_of_hill_house",
+        "guards_guards",
+        "master_of_go",
       ]
     },
     "Danny": {
@@ -94,7 +109,9 @@
       "booksRead": [
         "babel",
         "fear_and_loathing_in_las_vegas",
-        "the_haunting_of_hill_house"
+        "the_haunting_of_hill_house",
+        "guards_guards",
+        "master_of_go",
       ]
     },
     "Asher": {
@@ -118,7 +135,9 @@
         "vanishing_world",
         "roadside_picnic",
         "wager",
-        "the_haunting_of_hill_house"
+        "the_haunting_of_hill_house",
+        "guards_guards",
+        "master_of_go",
       ]
     },
     "Alex": {
@@ -131,7 +150,10 @@
         "parable_of_the_sower",
         "vanishing_world",
         "roadside_picnic",
-        "wager"
+        "wager",
+        "the_haunting_of_hill_house",
+        "guards_guards",
+        "master_of_go",
       ]
     },
     "Ben": {
@@ -145,7 +167,9 @@
         "vanishing_world",
         "roadside_picnic",
         "wager",
-        "the_haunting_of_hill_house"
+        "the_haunting_of_hill_house",
+        "guards_guards",
+        "master_of_go",
       ]
     },
     "Louis": {
